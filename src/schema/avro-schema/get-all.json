@@ -1,0 +1,59 @@
+{
+  "name": "MyClass",
+  "type": "array",
+  "namespace": "com.acme.avro",
+  "items": {
+    "name": "MyClass_record",
+    "type": "record",
+    "fields": [
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "first_name",
+        "type": "string"
+      },
+      {
+        "name": "last_name",
+        "type": "string"
+      },
+      {
+        "name": "email",
+        "type": "string"
+      },
+      {
+        "name": "gender",
+        "type": "string"
+      },
+      {
+        "name": "age",
+        "type": "int"
+      },
+      {
+        "name": "phone",
+        "type": "string"
+      },
+      {
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "name": "state",
+        "type": ["string", "null"]
+      },
+      {
+        "name": "city",
+        "type": "string"
+      },
+      {
+        "name": "street",
+        "type": "string"
+      },
+      {
+        "name": "house",
+        "type": "string"
+      }
+    ]
+  }
+}

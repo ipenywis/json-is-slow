@@ -1,7 +1,14 @@
 {
   "name": "json-benchmark",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
+  "main": "src/benchmark.js",
+  "engines": {
+    "node": ">=14.10"
+  },
+  "scripts": {
+    "benchmark": "node --experimental-json-modules src/benchmark.js"
+  },
   "dependencies": {
     "@msgpack/msgpack": "^2.2.0",
     "avro-js": "^1.10.0",

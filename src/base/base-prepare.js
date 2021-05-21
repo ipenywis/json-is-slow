@@ -1,21 +1,18 @@
+/**
+ * Base class
+ * @name BasePreare
+ * @param schema Prepare schema
+ * @returns BaseClass
+ * @example
+ * import MyCompiler from 'my-compiler';
+ * const parser = new BasePreare({type:'object'})
+ */
 
-  /**
-   * Base class
-   * @name BasePreare
-   * @param schema Prepare schema
-   * @returns BaseClass
-   * @example
-   * import MyCompiler from 'my-compiler';
-   * const parser = new BasePreare({type:'object'})
-   * parser.setCompiler(MyCompiler);
-   * parser.compile()
-   */
-
-  class BasePreare {
-  static invalid (message) {
+class BasePreare {
+  static invalid(message) {
     throw new Error(message);
   }
-  constructor (schema) {
+  constructor(schema) {
     this.schema = schema;
     this.compiler = null;
     this.handler = null;
@@ -35,6 +32,7 @@
    */
   setCompiler(compiler) {
     this.compiler = compiler;
+    this._compiler = true;
 
     return this;
   }
@@ -50,7 +48,9 @@
       BasePreare.invalid('Schema was not defined, please set schema first');
     }
     if (typeof this.compiler !== 'function') {
-      BasePreare.invalid('Compiler is not a function, please make set correctly all arguments and parameters');
+      BasePreare.invalid(
+        'Compiler is not a function, please make set correctly all arguments and parameters'
+      );
     }
 
     this.handler = this.compiler(this.schema);
@@ -67,8 +67,8 @@
    * @example .setSerializer((compiler) => compiler)
    */
   setSerializer(func) {
-    if (!this.handler) {
-      BasePreare.invalid('Handler was not defined, please see example first');
+    if (!this.handler && this._compiler) {
+      BasePreare.invalid('Handler was not defined, please set compiler first');
     }
 
     this.serializer = func.bind(null, this.handler);
@@ -85,8 +85,8 @@
    * @example .setDeserializer((compiler) => compiler)
    */
   setDeserializer(func) {
-    if (!this.handler) {
-      BasePreare.invalid('Handler was not defined, please see example first');
+    if (!this.handler && this._compiler) {
+      BasePreare.invalid('Handler was not defined, please set compiler first');
     }
 
     this.deserializer = func.bind(null, this.handler);
@@ -97,7 +97,7 @@
   /**
    * Serializes data from before given prepares
    * @param {*} data Any input data which should be serialized
-   * @returns this
+   * @returns {String|Buffer|ArrayBuffer|Uint8Array}
    * @memberof BaseClass
    * @example .serialize({data: {foo:'bar'}})
    */
@@ -108,13 +108,13 @@
   /**
    * Deserializes data from before given prepares
    * @param {*} data Any input data which should be deserialized
-   * @returns this
+   * @returns {Object|Buffer|ArrayBuffer}
    * @memberof BaseClass
-   * @example .deserialize({data: {foo:'bar'}})
+   * @example .deserialize('{"data":{"foo":"bar"}}')
    */
   deserialize(data) {
     return this.deserializer(data);
   }
 }
 
-export default BasePreare
+export default BasePreare;

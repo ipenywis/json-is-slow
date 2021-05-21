@@ -1,20 +1,19 @@
-import fastJsonStringify from 'fast-json-stringify';
-import turboJsonParse from 'turbo-json-parse';
+import * as mgpackR from 'msgpackr';
 import { BasePreare } from '../base/index.js';
 import getAllSchema from '../schema/json-schema/get-all.json';
 import getOneSchema from '../schema/json-schema/get-one.json';
 import healthSchema from '../schema/json-schema/health.json';
 
 const getAllHandler = new BasePreare(getAllSchema);
-getAllHandler.setSerializer(fastJsonStringify);
-getAllHandler.setDeserializer(turboJsonParse);
+getAllHandler.setSerializer(() => mgpackR.pack);
+getAllHandler.setDeserializer(() => mgpackR.unpack);
 
 const getOneHandler = new BasePreare(getOneSchema);
-getOneHandler.setSerializer(fastJsonStringify);
-getOneHandler.setDeserializer(turboJsonParse);
+getOneHandler.setSerializer(() => mgpackR.pack);
+getOneHandler.setDeserializer(() => mgpackR.unpack);
 
 const healthHandler = new BasePreare(healthSchema);
-healthHandler.setSerializer(fastJsonStringify);
-healthHandler.setDeserializer(turboJsonParse);
+healthHandler.setSerializer(() => mgpackR.pack);
+healthHandler.setDeserializer(() => mgpackR.unpack);
 
 export { getAllHandler, getOneHandler, healthHandler };
