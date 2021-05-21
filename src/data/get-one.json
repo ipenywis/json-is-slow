@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "data": {
+    "id": "1e0c89a3-9403-492d-9863-921bbc7aeebb",
+    "first_name": "John",
+    "last_surname": "Doe",
+    "email": "john_doe@dummymail.bar",
+    "gender": "Male",
+    "age": 23,
+    "phone": "+1 (234) 567-89-00",
+    "country": "US",
+    "state": "California",
+    "city": "Foo",
+    "street": "Bar",
+    "house": 121
+  }
+}
