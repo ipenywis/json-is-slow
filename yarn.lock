@@ -145,11 +145,6 @@ fast-json-stringify@^2.7.4:
     rfdc "^1.2.0"
     string-similarity "^4.0.1"
 
-google-protobuf@^4.0.0-rc.1:
-  version "4.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/google-protobuf/-/google-protobuf-4.0.0-rc.2.tgz#9fecb748b3e81d7a7a9160f991141f6ef8e9acd8"
-  integrity sha512-KANe0ePi8Uk0m17xvjI1bXrE7LRflSuNczkAlHlOEeqXnSBy96tDS5beKwKOnNr0xYmlbC9XiQsj8fOLLyDp2Q==
-
 ieee754@^1.1.13:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.2.1.tgz#8eb7a10a63fff25d15a57b001586d177d1b0d352"
