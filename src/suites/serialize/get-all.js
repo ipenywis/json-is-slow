@@ -1,6 +1,9 @@
 import Benchmark from 'benchmark';
 import getAllData from '../../data/get-all.json';
-import { getAllHandler as avroAvscGetAllHandler } from '../../handlers/avro-avsc.js';
+import { getAllHandler as avroGetAllHandler } from '../../handlers/avro.js';
+import { getAllHandler as avscGetAllHandler } from '../../handlers/avsc.js';
+import { getAllHandler as bserGetAllHandler } from '../../handlers/bser.js';
+import { getAllHandler as BSONGetAllHandler } from '../../handlers/bson.js';
 import { getAllHandler as jsBinaryGetAllHandler } from '../../handlers/js-binary.js';
 import { getAllHandler as jsonSchemaGetAllHandler } from '../../handlers/json-schema.js';
 import { getAllHandler as msgpackGetAllHandler } from '../../handlers/msgpack.js';
@@ -31,8 +34,11 @@ suite.add('getAll: msgpackR.pack', () => {
 suite.add('getAll: msgpack.encode', () => {
   msgpackGetAllHandler.serialize(getAllData);
 });
-suite.add('getAll: avro-avsc.toBuffer', () => {
-  avroAvscGetAllHandler.serialize(getAllData);
+suite.add('getAll: avsc.toBuffer', () => {
+  avscGetAllHandler.serialize(getAllData);
+});
+suite.add('getAll: avro.toBuffer', () => {
+  avroGetAllHandler.serialize(getAllData);
 });
 suite.add('getAll: js-binary.encode', () => {
   jsBinaryGetAllHandler.serialize(getAllData);
@@ -44,6 +50,12 @@ suite.add('getAll: protobuf.encode', () => {
   protobufGetAllHandler.serialize({
     items: getAllData
   });
+});
+suite.add('getAll: bson.serialize', () => {
+  BSONGetAllHandler.serialize(getAllData);
+});
+suite.add('getAll: bser.dumpToBuffer', () => {
+  bserGetAllHandler.serialize(getAllData);
 });
 
 export default suite;

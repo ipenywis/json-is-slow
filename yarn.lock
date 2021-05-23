@@ -80,13 +80,6 @@ ajv@^6.11.0:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-avro-js@^1.10.0:
-  version "1.10.2"
-  resolved "https://registry.yarnpkg.com/avro-js/-/avro-js-1.10.2.tgz#5eaa26249a8d772556f1a6f0cb0fae2e0f1c7788"
-  integrity sha512-lkZAFBR54pmXQDWjDpZVZWWIJwi/3T3NED16ooiJp+sl0acFkBOOGL1OMguIP5P9A0R33s+eevy3ATIyqnxGVA==
-  dependencies:
-    underscore "^1.12.0"
-
 avsc@^5.4.21:
   version "5.7.0"
   resolved "https://registry.yarnpkg.com/avsc/-/avsc-5.7.0.tgz#a2d85006606bc3388feda054bba09091a2d65b33"
@@ -260,11 +253,6 @@ string-similarity@^4.0.1:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/string-similarity/-/string-similarity-4.0.4.tgz#42d01ab0b34660ea8a018da8f56a3309bb8b2a5b"
   integrity sha512-/q/8Q4Bl4ZKAPjj8WerIBJWALKkaPRfrvhfF8k/B23i4nzrlRj2/go1m90In7nG/3XDSbOo0+pu6RvCTM9RGMQ==
-
-underscore@^1.12.0:
-  version "1.13.1"
-  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.13.1.tgz#0c1c6bd2df54b6b69f2314066d65b6cde6fcf9d1"
-  integrity sha512-hzSoAVtJF+3ZtiFX0VgfFPHEDRm7Y/QPjGyNo4TVdnDTdft3tr8hEkD25a1jC+TjTuE7tkHGKkhwCgs9dgBB2g==
 
 uri-js@^4.2.2:
   version "4.4.1"
