@@ -1,0 +1,15 @@
+[
+  {
+    "id": "string",
+    "first_name": "string",
+    "last_name": "string",
+    "email": "string",
+    "gender": "string",
+    "age": "int",
+    "phone": "string",
+    "country": "string",
+    "state": "json",
+    "city": "string",
+    "house": "string"
+  }
+]

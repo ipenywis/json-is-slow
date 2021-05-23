@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message HealthMessage {
+    string status = 1;
+    string health = 2;
+}

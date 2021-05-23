@@ -14,46 +14,9 @@ class BasePreare {
   }
   constructor(schema) {
     this.schema = schema;
-    this.compiler = null;
-    this.handler = null;
 
     this.deserializer = null;
     this.serializer = null;
-
-    return this;
-  }
-
-  /**
-   * This method sets compiler for future actions
-   * @param compiler Set compiler
-   * @returns this
-   * @memberof BaseClass
-   * @example .setCompiler(turboJsonParse)
-   */
-  setCompiler(compiler) {
-    this.compiler = compiler;
-    this._compiler = true;
-
-    return this;
-  }
-
-  /**
-   * This method compiles `schema` and makes handler available
-   * @returns this
-   * @memberof BaseClass
-   * @example .compile()
-   */
-  compile() {
-    if (!this.schema) {
-      BasePreare.invalid('Schema was not defined, please set schema first');
-    }
-    if (typeof this.compiler !== 'function') {
-      BasePreare.invalid(
-        'Compiler is not a function, please make set correctly all arguments and parameters'
-      );
-    }
-
-    this.handler = this.compiler(this.schema);
 
     return this;
   }
@@ -67,11 +30,11 @@ class BasePreare {
    * @example .setSerializer((compiler) => compiler)
    */
   setSerializer(func) {
-    if (!this.handler && this._compiler) {
-      BasePreare.invalid('Handler was not defined, please set compiler first');
+    if (!this.schema) {
+      BasePreare.invalid('Schema was not defined, please set schema first');
     }
 
-    this.serializer = func.bind(null, this.handler);
+    this.serializer = func(this.schema);
 
     return this;
   }
@@ -85,11 +48,11 @@ class BasePreare {
    * @example .setDeserializer((compiler) => compiler)
    */
   setDeserializer(func) {
-    if (!this.handler && this._compiler) {
-      BasePreare.invalid('Handler was not defined, please set compiler first');
+    if (!this.schema) {
+      BasePreare.invalid('Schema was not defined, please set schema first');
     }
 
-    this.deserializer = func.bind(null, this.handler);
+    this.deserializer = func(this.schema);
 
     return this;
   }
@@ -102,7 +65,7 @@ class BasePreare {
    * @example .serialize({data: {foo:'bar'}})
    */
   serialize(data) {
-    return this.serializer(data);
+    return this.serializer(data, this);
   }
 
   /**
@@ -113,7 +76,7 @@ class BasePreare {
    * @example .deserialize('{"data":{"foo":"bar"}}')
    */
   deserialize(data) {
-    return this.deserializer(data);
+    return this.deserializer(data, this);
   }
 }
 

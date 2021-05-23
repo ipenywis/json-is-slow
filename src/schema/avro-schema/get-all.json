@@ -1,9 +1,6 @@
 {
-  "name": "MyClass",
   "type": "array",
-  "namespace": "com.acme.avro",
   "items": {
-    "name": "MyClass_record",
     "type": "record",
     "fields": [
       {
@@ -40,7 +37,7 @@
       },
       {
         "name": "state",
-        "type": ["string", "null"]
+        "type": ["null", "string"]
       },
       {
         "name": "city",

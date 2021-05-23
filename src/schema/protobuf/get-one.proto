@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+message Data {
+    string id = 1;
+    string first_name = 2;
+    string last_surname = 3;
+    string email = 4;
+    string gender = 5;
+    uint32 age = 6;
+    string phone = 7;
+    string country = 8;
+    string state = 9;
+    string city = 10;
+    string street = 11;
+    uint32 house = 12;
+}
+
+message GetOneItem {
+    string status = 1;
+    Data data = 2;
+}

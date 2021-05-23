@@ -1,4 +1,5 @@
 import deserializeGetAllSuite from './suites/deserialize/get-all.js';
+import serializeGetAllSuite from './suites/serialize/get-all.js';
 
-console.log('\n');
 deserializeGetAllSuite.run();
+serializeGetAllSuite.run();
