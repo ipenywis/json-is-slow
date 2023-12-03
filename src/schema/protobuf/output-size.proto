@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message OutputSize {
+    string message = 1;
+    uint32 recipientId = 2;
+    string date = 3;
+    bool isRead = 4;
+}

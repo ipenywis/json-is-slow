@@ -1,6 +1,14 @@
-# json-(de)serialize
+# JSON is Slow!
 
-<p align='center'><b>Benchmarking serialization and deserialization for your API requests to understand which method gives better performance</b></p>
+JSON Benchmarking for serialization and deserialization with many other data interchange protocols.
+
+Explained in this video tutorial on youtube https://youtu.be/jWQHKMW59PQ
+
+## Credits
+
+This project was cloned from https://github.com/nanoexpress/json-benchmark with some slight adjustments for the video tutorial on Youtube (https://youtu.be/jWQHKMW59PQ) 
+
+All credits go to @dalisoft for his great work and for this awesome JSON benchmark.
 
 ## Requires
 

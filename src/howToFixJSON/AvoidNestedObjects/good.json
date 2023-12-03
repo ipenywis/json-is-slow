@@ -1,0 +1,9 @@
+{
+  "userName": "John Doe",
+  "userAge": 30,
+  "userStreet": "123 Main St",
+  "userCity": "Anytown",
+  "userPosition": "Software Engineer",
+  "userCompany": "TechCo",
+  "companyLocation": "Silicon Valley"
+}

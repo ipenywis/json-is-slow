@@ -7,7 +7,10 @@
     "node": ">=15.10"
   },
   "scripts": {
-    "benchmark": "node --experimental-json-modules src/benchmark.js"
+    "benchmark": "node --experimental-json-modules src/benchmark.js",
+    "benchmark:one": "node --experimental-json-modules src/benchmark-one.js",
+    "outputSizeBenchmark": "node --experimental-json-modules src/outputSizeBenchmark.js",
+    "test": "node --experimental-json-modules src/test.js"
   },
   "dependencies": {
     "@msgpack/msgpack": "^2.2.0",

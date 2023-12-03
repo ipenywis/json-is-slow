@@ -1,0 +1,21 @@
+{
+  "user": {
+    "profile": {
+      "personalInfo": {
+        "name": "John Doe",
+        "age": 30,
+        "address": {
+          "street": "123 Main St",
+          "city": "Anytown"
+        }
+      },
+      "employmentInfo": {
+        "position": "Software Engineer",
+        "company": {
+          "name": "TechCo",
+          "location": "Silicon Valley"
+        }
+      }
+    }
+  }
+}

@@ -1,13 +1,17 @@
 {
-  "id": "string",
-  "first_name": "string",
-  "last_name": "string",
-  "email": "string",
-  "gender": "string",
-  "age": "int",
-  "phone": "string",
-  "country": "string",
-  "state": "string",
-  "city": "string",
-  "house": "int"
+  "status": "string",
+  "data": {
+    "id": "string",
+    "first_name": "string",
+    "last_surname": "string",
+    "email": "string",
+    "gender": "string",
+    "age": "int",
+    "phone": "string",
+    "country": "string",
+    "state": "string",
+    "city": "string",
+    "street": "string",
+    "house": "int"
+  }
 }

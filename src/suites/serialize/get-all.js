@@ -1,5 +1,5 @@
 import Benchmark from 'benchmark';
-import getAllData from '../../data/get-all.json';
+import getAllData from '../../data/get-all.json' assert { type: 'json' };
 import { getAllHandler as avscGetAllHandler } from '../../handlers/avsc.js';
 import { getAllHandler as bserGetAllHandler } from '../../handlers/bser.js';
 import { getAllHandler as BSONGetAllHandler } from '../../handlers/bson.js';
@@ -31,7 +31,10 @@ suite.on('complete', function () {
   );
 });
 
-suite.add('getAll: fast-json-stringify', () => {
+// suite.add('getAll: fast-json-stringify', () => {
+//   jsonSchemaGetAllHandler.serialize(getAllData);
+// });
+suite.add('getAll: JSON.stringify', () => {
   jsonSchemaGetAllHandler.serialize(getAllData);
 });
 suite.add('getAll: msgpackR.pack', () => {

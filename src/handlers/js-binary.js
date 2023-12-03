@@ -1,8 +1,8 @@
 import { Type } from 'js-binary';
 import { BasePreare } from '../base/index.js';
-import getAllSchema from '../schema/js-binary-schema/get-all.json';
-import getOneSchema from '../schema/js-binary-schema/get-one.json';
-import healthSchema from '../schema/js-binary-schema/health.json';
+import getAllSchema from '../schema/js-binary-schema/get-all.json' assert { type: 'json' };
+import getOneSchema from '../schema/js-binary-schema/get-one.json' assert { type: 'json' };
+import healthSchema from '../schema/js-binary-schema/health.json' assert { type: 'json' };
 
 const fromHandler = () => (data, self) => self.compiler.encode(data);
 const toHandler = () => (data, self) => self.compiler.decode(data);

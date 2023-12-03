@@ -3,3 +3,4 @@ import serializeGetAllSuite from './suites/serialize/get-all.js';
 
 deserializeGetAllSuite.run();
 serializeGetAllSuite.run();
+

@@ -1,0 +1,11 @@
+{
+  "userId": 123,
+  "userName": "Jane Doe",
+  "userEmail": "jane.doe@example.com",
+  "userAddress": {
+    "street": "456 Oak Ave",
+    "city": "Sometown"
+  },
+  "isSubscribed": true,
+  "lastLogin": "2023-01-01T12:00:00Z"
+}

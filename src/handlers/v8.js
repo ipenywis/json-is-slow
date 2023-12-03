@@ -6,7 +6,7 @@ getAllHandler.setSerializer(() => v8.serialize);
 getAllHandler.setDeserializer(() => v8.deserialize);
 
 const getOneHandler = new BasePreare({});
-getOneHandler.setSerializer(v8.serialize);
+getOneHandler.setSerializer(() => v8.serialize);
 getOneHandler.setDeserializer(() => v8.deserialize);
 
 const healthHandler = new BasePreare({});

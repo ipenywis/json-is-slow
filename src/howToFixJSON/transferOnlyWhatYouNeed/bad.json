@@ -1,0 +1,18 @@
+{
+  "user": {
+    "id": 123,
+    "name": "Jane Doe",
+    "email": "jane.doe@example.com",
+    "phone": "+1234567890",
+    "address": {
+      "street": "456 Oak Ave",
+      "city": "Sometown",
+      "zipCode": "67890"
+    },
+    "isSubscribed": true,
+    "isPremiumUser": true,
+    "lastLogin": "2023-01-01T12:00:00Z",
+    "otherUnnecessaryField1": "...",
+    "otherUnnecessaryField2": "..."
+  }
+}

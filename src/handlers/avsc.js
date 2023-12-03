@@ -1,8 +1,8 @@
 import avroAvsc from 'avsc';
 import { BasePreare } from '../base/index.js';
-import getAllSchema from '../schema/avro-schema/get-all.json';
-import getOneSchema from '../schema/avro-schema/get-one.json';
-import healthSchema from '../schema/avro-schema/health.json';
+import getAllSchema from '../schema/avro-schema/get-all.json' assert { type: 'json' };
+import getOneSchema from '../schema/avro-schema/get-one.json' assert { type: 'json' };
+import healthSchema from '../schema/avro-schema/health.json' assert { type: 'json' };
 
 const fromHandler = () => (data, self) => self.compiler.toBuffer(data);
 const toHandler = () => (data, self) => self.compiler.fromBuffer(data);
